@@ -25,3 +25,4 @@ https://github.com/RayWangQvQ/BiliBiliToolPro
 
 ### 使用注意
 1. 不要使用代理，在ssr访问控制中将桥接ip设置为白名单
+2. 需要添加什么后缀的文件需要修改```RepoFileExtensions="js mjs py pyc sh"```
