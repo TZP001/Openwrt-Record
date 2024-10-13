@@ -3,7 +3,7 @@
 ### 命令安装
 ```
 docker run -dit \
-  -v 你的本地目录/ql/data:/ql/data \
+  -v <你的本地目录>/ql/data:/ql/data \
   -p 5700:5700 \
   -e QlBaseUrl="/" \
   -e QlPort="5700" \
