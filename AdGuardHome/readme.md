@@ -110,3 +110,5 @@ iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 5330
 * 使用绕过中国大陆模式
 #### AdGuardHome解析域名失败
 * 检查是否开启了【浏览安全】和【家长控制】
+#### passwall节点可用，不能出国
+* [使用了Nginx](https://github.com/coolsnowwolf/lede/issues/5727)，设置uwsgi>luci-webui>limit为5000
