@@ -1,5 +1,5 @@
-# docker-
-记录docker应该集成的好玩容器
+# Openwrt-Record
+记录openwrt使用过程中遇到的一些问题和一些好玩容器的使用心得
 --------------
 1.Pairdrop
 跨设备传输项目
