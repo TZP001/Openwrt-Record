@@ -70,6 +70,14 @@ https://dns.quad9.net/dns-query
 * 不要勾选【浏览安全】和【家长控制】，否则AdGuard无法正常解析DNS
 * 此处没有开启ipv6，有需要的自己开启，有些设置可能需要再修改
 * 黑名单设置：国内组添加了一个[easylist](https://anti-ad.net/easylist.txt)，国外组默认
+* 在passwall或ssr+中添加不代理域名（有挺大作用）
+```
+sm2.doh.pub
+dns.alidns.com
+doh.360.cn
+doh.pub
+dns.pub
+```
 -----------
 ### 路由器设置
 #### lan口设置
