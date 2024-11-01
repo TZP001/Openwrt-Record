@@ -14,5 +14,5 @@ docker run -dit \
     -e DEBUG_MODE=false \
     -e TZ="Asia/Shanghai" \
     --dns 223.5.5.5 \
-    lscr.io/linuxserver/pairdrop
+    linuxserver/pairdrop
 ```
