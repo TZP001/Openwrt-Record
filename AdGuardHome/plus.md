@@ -6,7 +6,7 @@ docker run -dit \
   -v <你的本地目录>/ADG/conf:/opt/adguardhome/conf \
   -e TZ="Asia/Shanghai" \
   --dns 223.5.5.5 \
-  -p 3001:3000/tcp \
+  -p 3005:3000/tcp \
   -p 5353:5353/tcp \
   -p 5353:5353/udp \
   --restart always \
