@@ -7,8 +7,8 @@ docker run -dit \
   -e TZ="Asia/Shanghai" \
   --dns 223.5.5.5 \
   -p 3005:3000/tcp \
-  -p 5353:5353/tcp \
-  -p 5353:5353/udp \
+  -p 5333:5333/tcp \
+  -p 5333:5333/udp \
   --restart always \
   -d adguard/adguardhome:latest
 ```
