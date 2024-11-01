@@ -8,6 +8,7 @@ docker run -dit \
   -v <你的本地目录>/ADG_Home/conf:/opt/adguardhome/conf \
   -e TZ="Asia/Shanghai" \
   --dns 223.5.5.5 \
+  --network host \
   --restart always \
   -d adguard/adguardhome:latest
 ```
