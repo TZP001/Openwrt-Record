@@ -1,7 +1,19 @@
 ## <span style="color: red;">三</span>AdGuardHome实现分流加dns监控
 ## AdGuardHome常用配置
 ### 安装（开始之前先把教程看完）
-#### 国内组（host模式）
+#### 监控组（host模式）
+```
+docker run -dit \
+  --name ADG_Eye \
+  -v <你的本地目录>/ADG_Eye/work:/opt/adguardhome/work \
+  -v <你的本地目录>/ADG_Eye/conf:/opt/adguardhome/conf \
+  -e TZ="Asia/Shanghai" \
+  --dns 223.5.5.5 \
+  --network host \
+  --restart always \
+  -d adguard/adguardhome:latest
+```
+#### 国内组（bridge模式）
 ```
 docker run -dit \
   --name ADG_Home \
@@ -9,7 +21,9 @@ docker run -dit \
   -v <你的本地目录>/ADG_Home/conf:/opt/adguardhome/conf \
   -e TZ="Asia/Shanghai" \
   --dns 223.5.5.5 \
-  --network host \
+  -p 3002:3000/tcp \
+  -p 5333:5333/tcp \
+  -p 5333:5333/udp \
   --restart always \
   -d adguard/adguardhome:latest
 ```
@@ -28,24 +42,9 @@ docker run -dit \
   -d adguard/adguardhome:latest
 ```
 ----------
-#### 监控组（bridge模式）
-```
-docker run -dit \
-  --name ADG_Eye \
-  -v <你的本地目录>/ADG_Eye/work:/opt/adguardhome/work \
-  -v <你的本地目录>/ADG_Eye/conf:/opt/adguardhome/conf \
-  -e TZ="Asia/Shanghai" \
-  --dns 223.5.5.5 \
-  -p 3002:3000/tcp \
-  -p 5333:5333/tcp \
-  -p 5333:5333/udp \
-  --restart always \
-  -d adguard/adguardhome:latest
-```
-----------
 ### 使用方法
 #### DNS设置
-##### 国内组
+##### 监控组
 进去```<路由器ip>:3000```，把web监听端口设置为3000，DNS监听端口设置为5330（不要和其它端口冲突）<br>
 ###### 上游 DNS 服务器设置
 ```
@@ -59,7 +58,7 @@ docker run -dit \
 ```
 114.114.114.114
 ```
-##### 监控组
+##### 国内组
 进去```<路由器ip>:3002```，把web监听端口设置为3000（设置成功点击页面会跳转到3000端口，需要手动改回3002端口），
 DNS监听端口设置为5333（你映射的端口）,如果设置为53端口，会造成Adguardhome不工作，因为内部53端口已经被容器本身占用
 ###### 上游 DNS 服务器设置
