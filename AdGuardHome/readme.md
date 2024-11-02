@@ -1,5 +1,7 @@
 ## AdGuardHome常用配置
 ### 安装（开始之前先把教程看完）
+### [三AdGuardHome实现分流加dns监控](./plus.md)
+### [AdGuardHome和SmartDNS配合实现分流和记录dns请求](./smartdns.md)
 #### 国内组（host模式）
 ```
 docker run -dit \
