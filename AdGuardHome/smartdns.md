@@ -44,13 +44,12 @@ dns.pub
 ##### 实际上是将ADG国内组和国外组配置填入smartdns
 * 一定要填入一组ip，否则无法解析，和ADG的```Bootstrap DNS```一样的道理
 ```
+
 config smartdns
 	option enabled '1'
 	option server_name 'smartdns'
 	option port '5336'
 	option tcp_server '1'
-	option ipv6_server '1'
-	option dualstack_ip_selection '1'
 	option serve_expired '1'
 	option resolve_local_hostnames '1'
 	option force_https_soa '0'
@@ -71,6 +70,9 @@ config smartdns
 	option seconddns_port '5335'
 	option seconddns_force_aaaa_soa '1'
 	option prefetch_domain '1'
+	option cache_size '9999'
+	option ipv6_server '0'
+	option dualstack_ip_selection '0'
 	option old_port '5336'
 	option old_enabled '1'
 	option old_auto_set_dnsmasq '0'
