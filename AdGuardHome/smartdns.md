@@ -1,4 +1,4 @@
-## AdGuardHome和SmartDNS配合实现分流和记录dns请求
+## AdGuardHome和SmartDNS配合实现分流和记录dns请求（感觉有些卡顿）
 ### 安装（开始之前先把教程看完）
 #### AdGuardHome（host模式）
 ##### 安装
