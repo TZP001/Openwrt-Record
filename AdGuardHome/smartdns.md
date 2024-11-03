@@ -114,13 +114,6 @@ config server
 
 config server
 	option enabled '1'
-	option name '阿里'
-	option ip '223.6.6.6'
-	option type 'udp'
-	option blacklist_ip '0'
-
-config server
-	option enabled '1'
 	option name '国外'
 	option ip 'https://94.140.14.141/dns-query'
 	option type 'udp'
@@ -142,19 +135,11 @@ config server
 	option type 'udp'
 	option server_group 'firewall'
 	option blacklist_ip '0'
-
-config server
-	option enabled '1'
-	option name '谷歌'
-	option ip '8.8.8.8'
-	option type 'udp'
-	option server_group 'firewall'
-	option blacklist_ip '0'
 ```
 -----------
 ### 路由器设置
 #### lan口设置
-* 将DNS服务器设置为```127.0.0.1```
+* 将DNS服务器设置为```223.5.5.5``` 和 ```8.8.8.8``` ，这里填什么都不会影响，但填127.0.0.1会对smartdns首次启动造成影响
 #### 防火墙设置，重定向dns端口 
 * 在防火墙自定义规则添加如下规则，将dns请求重定向到国内组端口
 ```shell
