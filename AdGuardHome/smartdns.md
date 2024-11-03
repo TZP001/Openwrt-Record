@@ -40,7 +40,7 @@ doh.pub
 dns.pub
 ```
 -----------
-#### smartDNS设置
+#### smartDNS设置（建议使用ip的dns，因为smartdns没有Bootstrap DNS）
 ##### 实际上是将ADG国内组和国外组配置填入smartdns
 * 一定要填入一组ip，否则无法解析，和ADG的```Bootstrap DNS```一样的道理
 ```
@@ -139,7 +139,7 @@ config server
 -----------
 ### 路由器设置
 #### lan口设置
-* 将DNS服务器设置为```223.5.5.5``` 和 ```8.8.8.8``` ，这里填什么都不会影响，但填127.0.0.1会对smartdns首次启动造成影响
+* 将DNS服务器设置为```223.5.5.5```，这里填什么都不会影响，但填```127.0.0.1```会对smartdns首次启动造成影响
 #### 防火墙设置，重定向dns端口 
 * 在防火墙自定义规则添加如下规则，将dns请求重定向到国内组端口
 ```shell
@@ -173,5 +173,6 @@ iptables -t nat -A PREROUTING -p tcp --dport 53 -j REDIRECT --to-ports 5330
 * 使用绕过中国大陆模式
 #### AdGuardHome解析域名失败
 * 检查是否开启了【浏览安全】和【家长控制】
-
+#### 国外组没有添加ip域名，对于分流的域名解析影响非常大
+* 只填写ip作为上游dns
 
