@@ -1,4 +1,4 @@
-## 青龙使用心得
+## 青龙使用心得[【项目地址】](https://github.com/whyour/qinglong)
 
 ### 命令安装
 ```
