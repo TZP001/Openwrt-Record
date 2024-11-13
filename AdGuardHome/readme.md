@@ -1,4 +1,4 @@
-## AdGuardHome常用配置
+## AdGuardHome常用配置[【项目地址】](https://github.com/AdguardTeam/AdGuardHome)
 ### 安装（开始之前先把教程看完）
 ### [三AdGuardHome实现分流加dns监控](./plus.md)
 ### [AdGuardHome和SmartDNS配合实现分流和记录dns请求](./smartdns.md)
