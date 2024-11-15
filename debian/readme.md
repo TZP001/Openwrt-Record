@@ -2,14 +2,14 @@
 #### 安装
  ```
 docker run -it \
-      --name=debian \
-      --rm \
-      -p 8099:3389 \
-      -v <你的本地目录>/debian:/debian \
-      -e TZ="Asia/Shanghai" \
-	-e USER="VNCC"
-      --dns 223.5.5.5 \
-      debian:rc-buggy-20241111
+	--name=debian \
+	--rm \
+	-p 8099:3389 \
+	-v <你的本地目录>/debian:/debian \
+	-e TZ="Asia/Shanghai" \
+	-e USER="VNCC" \
+	--dns 223.5.5.5 \
+	debian:bullseye
 ```
 ------------------
 #### 使用
@@ -67,4 +67,20 @@ apt install procps net-tools inetutils-ping
 |sarge	   |Debian 3.1	| |bookworm	|Debian 12	| |			|		|
 |etch	   |Debian 4.0	| |trixie	|Debian 13	| |			|		|
 |sid 	   |unstable 	| |		|		| |			|		|
-  
+---------------------------
+### 进阶玩法
+```
+docker run -it \
+	--name="debian" \
+	-p 8099:5800 \
+	-v <你的本地目录>/debian/scripts:/debian/scripts \
+	-e VNC_USERNAME="VNCC" \
+	-e VNC_PASSWPRD="123456" \
+	-e NOVNCPort="5800" \
+	-e DIY_RUSN_SH="/debian/scripts/run.sh" \
+	-e RUN_RPO=true \
+	-e TZ="Asia/Shanghai" \
+	--dns 223.5.5.5 \
+	tzp001/debian:latest
+```
+```tzp001/debian:latest```已经添加了自动脚本，启动时自动安装novnc，可以通过DIY_RUSN_SH自定义开机运行脚本
