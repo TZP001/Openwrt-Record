@@ -69,18 +69,4 @@ apt install procps net-tools inetutils-ping
 |sid 	   |unstable 	| |		|		| |			|		|
 ---------------------------
 ### 进阶玩法
-```
-docker run -it \
-	--name="debian" \
-	-p 8099:5800 \
-	-v <你的本地目录>/debian/scripts:/debian/scripts \
-	-e VNC_USERNAME="VNCC" \
-	-e VNC_PASSWPRD="123456" \
-	-e NOVNCPort="5800" \
-	-e DIY_RUSN_SH="/debian/scripts/run.sh" \
-	-e RUN_RPO=true \
-	-e TZ="Asia/Shanghai" \
-	--dns 223.5.5.5 \
-	tzp001/debian:latest
-```
-```tzp001/debian:latest```已经添加了自动脚本，启动时自动安装novnc，可以通过DIY_RUSN_SH自定义开机运行脚本
+* [内置novnc](https://github.com/TZP001/docker-rebuild/tree/main/debian)
