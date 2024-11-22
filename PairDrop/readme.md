@@ -14,7 +14,7 @@ docker run -dit \
     -e DEBUG_MODE=false \
     -e TZ="Asia/Shanghai" \
     --dns 223.5.5.5 \
-    linuxserver/pairdrop
+    linuxserver/pairdrop:latest
 ```
 #### 说明
 * 可用于传输文件及文本，通过网页即可传输，非常方便
